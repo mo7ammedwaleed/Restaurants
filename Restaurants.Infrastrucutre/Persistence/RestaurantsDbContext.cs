@@ -3,15 +3,10 @@ using Restaurants.Domain.Entities;
 
 namespace Restaurants.Infrastrucutre.Persistence
 {
-    internal class RestaurantsDbContext : DbContext
+    internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options): DbContext(options)
     {
         internal DbSet<Restaurant> Restaurants { get; set; }
         internal DbSet<Dish> Dishes { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=MOHAMMED-WALEED;Database=RestaurantsDB;Integrated Security=True;Trust Server Certificate=True");
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
