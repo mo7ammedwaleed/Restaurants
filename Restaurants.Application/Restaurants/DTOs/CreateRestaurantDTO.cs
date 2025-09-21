@@ -1,10 +1,7 @@
-﻿using Restaurants.Application.Dishes.DTOs;
+﻿namespace Restaurants.Application.Restaurants.DTOs;
 
-namespace Restaurants.Application.Restaurants.DTOs;
-
-public class RestaurantDTO
+public class CreateRestaurantDTO
 {
-    public int Id { get; set; }
     public string Name { get; set; } = default!;
     public string Description { get; set; } = default!;
     public string Category { get; set; } = default!;
@@ -14,5 +11,6 @@ public class RestaurantDTO
     public string? Street { get; set; }
     public string? PostalCode { get; set; }
 
-    public List<DishDTO> Dishes { get; set; } = [];
+    public string? ContactEmail { get; set; }
+    public string? ContactNumber { get; set; }
 }
