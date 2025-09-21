@@ -13,7 +13,7 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/1
 
 POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
-{
+{  
       "Name": "Owner2 restaurant2",
       "Description": "A cozy restaurant serving a variety of delicious dishes.",
       "Category": "Indian",
