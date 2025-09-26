@@ -26,39 +26,27 @@ namespace Restaurants.API.Controllers
         public async Task<ActionResult<RestaurantDTO?>> GetById([FromRoute] int id)
         {
             var restaurant = await mediator.Send(new GetRestaurantByIdQuery(id));
-
-            if (restaurant is null)
-                return NotFound();
-
             return Ok(restaurant);
         }
 
         [HttpDelete("{id}")]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> DeleteRestaurant([FromRoute] int id)
         {
-            var isDeleted = await mediator.Send(new DeleteRestaurantCommand(id));
+            await mediator.Send(new DeleteRestaurantCommand(id));
 
-            if (isDeleted)
-                return NoContent();
-
-            return NotFound();
+            return NoContent();
         }
 
         [HttpPatch("{id}")]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> UpdateRestaurant([FromRoute] int id, UpdateRestaurantCommand command)
         {
             command.Id = id;
 
-            var IsUpdated = await mediator.Send(command);
+            await mediator.Send(command);
 
-            if (IsUpdated)
-                return NoContent();
-
-            return NotFound();
+            return NoContent();
         }
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
