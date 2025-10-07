@@ -11,6 +11,14 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/{restaurantId}
 
 ###
 
+GET {{Restaurants.API_HostAddress}}/api/restaurants/{restaurantId}/dishes
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/{restaurantId}/dishes/{dishId}
+
+###
+
 POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 {
