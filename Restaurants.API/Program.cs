@@ -31,7 +31,8 @@ var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
 await seeder.Seed();
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
-app.UseMiddleware<RequestTimeLoggingMiddleware>();
+
+//app.UseMiddleware<RequestTimeLoggingMiddleware>();
 
 app.UseSerilogRequestLogging();
 

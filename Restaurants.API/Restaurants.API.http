@@ -7,7 +7,7 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/1
+GET {{Restaurants.API_HostAddress}}/api/restaurants/{restaurantId}
 
 ###
 
@@ -27,18 +27,31 @@ Content-Type: application/json
 
 ###
 
-DELETE {{Restaurants.API_HostAddress}}/api/restaurants/1004
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/{restaurantId}
 
 ###
 
 
-PATCH {{Restaurants.API_HostAddress}}/api/restaurants/1007
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/{restaurantId}
 Content-Type: application/json
 
 {
   "Name": "Sample Patch",
   "Description": "A cozy restaurant serving a variety of delicious dishes.",
   "HasDelivery": true
+}
+
+###
+
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants/{restaurantId}/dishes
+Content-Type: application/json
+
+{
+  "Name": "Pasta",
+  "Description": "Delicious pasta with tomato sauce",
+  "Price": 25,
+  "KiloCalories": 15
 }
 
 ###
