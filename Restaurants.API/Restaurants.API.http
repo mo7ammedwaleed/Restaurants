@@ -11,7 +11,11 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/{restaurantId}
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/{restaurantId}/dishes
+GET {{Restaurants.API_HostAddress}}/api/restaurants/1/dishes
+
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/50/dishes
 
 ###
 
@@ -35,11 +39,6 @@ Content-Type: application/json
 
 ###
 
-DELETE {{Restaurants.API_HostAddress}}/api/restaurants/{restaurantId}
-
-###
-
-
 PATCH {{Restaurants.API_HostAddress}}/api/restaurants/{restaurantId}
 Content-Type: application/json
 
@@ -51,8 +50,7 @@ Content-Type: application/json
 
 ###
 
-
-POST {{Restaurants.API_HostAddress}}/api/restaurants/{restaurantId}/dishes
+POST {{Restaurants.API_HostAddress}}/api/restaurants/1/dishes
 Content-Type: application/json
 
 {
