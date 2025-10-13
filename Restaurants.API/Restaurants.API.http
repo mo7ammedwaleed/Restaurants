@@ -61,3 +61,5 @@ Content-Type: application/json
 }
 
 ###
+
+GET https://localhost:7115/api/restaurants/1/dishes/1009
