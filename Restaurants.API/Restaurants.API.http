@@ -63,3 +63,21 @@ Content-Type: application/json
 ###
 
 GET https://localhost:7115/api/restaurants/1/dishes/1009
+
+###
+
+POST {{Restaurants.API_HostAddress}}/register
+Content-Type: application/json
+{
+    "email": "test@test.com",
+    "password": "Password1!"
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/login
+Content-Type: application/json
+{
+    "email": "test@test.com",
+    "password": "Password1!"
+}
