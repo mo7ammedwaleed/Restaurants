@@ -1,6 +1,6 @@
 ﻿@host = https://localhost
 @port = 7115
-@token = CfDJ8BC8kxE1x5pDqTdZom6VR7nLk1qL-oStYWGX_0M1DA8MLzyKkKS6KFTyLN646qCjy7gUIyOfpe3YjwXVZbkJFY45_JxoODVNdKnZ4b6qzJpE7lUi6tBGiaDQ4W36l7d7qfZ5ergMVWLiewZeqAlx3xEBaVqvwN-hWnIznBlLSOkXT1met5cMRfM-UzOOdjH379nvmLpyqoGCgwpmnrFcm-qY8FhGSaFnDE5xLH5VSS_G6IyA4kEVpM_tSSgDqYOcdQQQki9FtpUfyVFNi6cKwAgo8G3Gj5BfDiR-a2qBwwARxkER-OTn5pMlZ7XxBdiTJdG6cih9K4ekAWtF-AyhT8TFUG47NFL_5G4MrNGCVCQXbQd7N35dI83kK8iJltQ6NCEmScuRcHya8Fcp2nHcV4dJwvAtg7R7vx1FsarY-NkKT6cr0Jukv8fuREnrSKTeNu7TARqZIgWvZcNLiZtgFm_kKGlmykf90c7746QPHUQ81Qq3MWfAM1lOyOVLhAxdKQtk5xLSLUYzMj6FU_v0BUNzSEEkN63yoLWqzEXaGSHQ7v-aDTIj2_GCcMpvSKrKwXLo03o4pD3xXNLJfsX86plD04i_acuKp79RpH4oRdyoT4KBQxtAqK9t7WnG46WzeTJqyqogzzck7CmQ9FT-V47eINNLCuWcfRDe4KaSI6p26HHUlafDUmW8uBCH7tCLCA
+@token = CfDJ8BC8kxE1x5pDqTdZom6VR7lgjb2wWkLoFOtOKedPj_OE83_ZjiidvigyOJyIBRfloAvKx9P7JncG_BjjuRkrWU09ZsWhUm0q_2fbn7L0p0gkzmLqkt_u_JzTvQaOeotWZfpxRQjN7VES6suj3f8yIrocdC2Vi9bmnfmi2ynu_oE-T8x_TpL1Yw8MBnWFaaEq-8v9HwNIW7_VMbj3O95SYgfLYKBmgRrqRDnoYzt11jy4g53XfQVIWlKLJL0toumG-LLfF2uEuTwqrlL71jAjikgqxsEcEprLCAzuAwEijsgEoZHQrHdJ82bdrT1BeMyLVq1cnq5NWrgyFp2Bp2Imh-MOOIk02LynhS5ii-8i5NDhi85cvOvbJVYsxiS13p8Pa4rmkyTDa4GyU5LQ9W_0V1r0hXnOEFbjamesEiYZ38TayR-7B7SkcGxwTrNp1ipNzuwppyLW4kQTb_G6J-viL1PzVzAmpLvWdjFXhay2lOy3kqlNsZN9AjN-Xud9_JzJpEOzxKvrVKtT7hGFwkkwUwirwAdyfeZhSUVT_z8NghrATxHFQFwXTU7NiMLDLhCxvwHAlCwtydCrjWi8CGDAUuFITqbxwgs_Gu5yK8OVJJ6_8mIJCmffc2a65j4ECEduHoGiOmNSYnDHRUsPu3sFEt_PXvzNMKTBnSVXbLckAh2hwtU_bQG-j-lNcNTCMcjouTNSTk-D08S7z4TrOgZBFnM81vo4W7ngc5iU7e50ErD9XvtJ_I_cN_sESweBQPRC9VGjgdtyhkgN6eTbcrolBLbiIcxIPfAhLp_zm_odRXk4
 @Restaurants.API_HostAddress = https://localhost:7115
 
 
@@ -26,9 +26,10 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/1/dishes/2
 ###
 
 POST {{Restaurants.API_HostAddress}}/api/restaurants
+Authorization: Bearer {{token}}
 Content-Type: application/json
 {
-      "Name": "Owner2 restaurant2",
+      "Name": "Owner2 restaurant5",
       "Description": "A cozy restaurant serving a variety of delicious dishes.",
       "Category": "Indian",
       "HasDelivery": true,
@@ -71,7 +72,7 @@ GET https://localhost:7115/api/restaurants/1/dishes/1009
 POST {{Restaurants.API_HostAddress}}/api/identity/register
 Content-Type: application/json
 {
-    "email": "test@test.com",
+    "email": "User@test.com",
     "password": "Password1!"
 }
 
@@ -80,6 +81,6 @@ Content-Type: application/json
 POST {{Restaurants.API_HostAddress}}/api/identity/login
 Content-Type: application/json
 {
-    "email": "test@test.com",
+    "email": "Owner@test.com",
     "password": "Password1!"
 }
