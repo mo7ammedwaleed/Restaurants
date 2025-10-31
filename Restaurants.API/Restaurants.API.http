@@ -1,6 +1,6 @@
 ﻿@host = https://localhost
 @port = 7115
-@token = CfDJ8BC8kxE1x5pDqTdZom6VR7lnsRnhE3GlqEgh2IXjzgrijlv793OdsfA1wEtc4a28Tv32oQqOb32BJzm53rADBcX1Z9b-i5vgS8RYGvCplBrHSW9xlndJ1pmacrRg_YeJNAULcXOFCeUKzp406oCa81zid8LWGhFrODC2FmiGG4-GBkKuAwo_-UtZHROn4NyKArC5kCJi3JahanOuT6DD0rgB2Wo5NwwttyAuOm-Ga8We5bFYGrnNXZLDGMNZVDQfProG18N2G9Qma2AeH357TS3zOyAfBjbu5kIbAPVy8WHR-XaCBpJYpMAFA7DEXJUt_G1k_atNRLXxyiEOYl3w5FyFS2gL7lSr_fqmbUqcnE4pgXsoOM3FjTtELAFvfBcgs-VOALIXrL9KqH6AknOMV7S754kGE9Fkp3ab0InW36tv_MFRRuLrlaSnkxY7n_1T6tARTI9gY3wzwUm1nbRw4Jg3QMwz5Sni3i1LlNlSQIoqDPsKOj1-pcJ4EWf37Gn4VFlmMgtMCS_9nLAqtLLxWwkbh30IMTL2RBsobj5OYzcWRLB_pIXUxoUJ8qt8FOlovkA8gWams1ij-c61zk-EVfrDpVsO3VjA-WC3c8gaaPYDhyQdfmt57-znY6DuIn2sTUe3YYZ5zUXbu8Fcph-FnPVvHNY-hmDv8YnmaK-mlNTykI5giI-r9REANILzFLCJDxjLYFvpY8h1oeyoORSLGc-gnzFpQSdvPy1sy7PiSckfL65VLqJb7Keb5dKphonL7kxhXmNnpQeVaeyXy9C7kBA
+@token = CfDJ8BC8kxE1x5pDqTdZom6VR7m7FhAcGPX0iT9OA9qekCrH70kXVny5SgM_0Ksg8B7M2f2-cyUbG37nSX-R7QH5ekQMysenT1ofkAtOxwqq6sTujcBJVNIdrWoZK5_VcwY-Qg3rgZB91b_h-AadGv8GV0MkOMe5_UbXzGwKtv-AuaIhP80jSmkEGZU6VSrMJVuPSzQWmCADqVZVk-dYm2hKPOZr2qZTpXFWlC-1UvLGVAmwDt4dUJ11Ku3s6-wYK0GHzkMwjR2JhGHVYDTrwG1qNOVLyq16PECaVBjHWv8yH1WXWR08Kl6rviX2eKeDS0FOG_Z6khfhLrSCca7X5ggtvSffETqF_rxweeIiWBsLMij5vPEXgfyIfFcy0h16Q8hShh9cv42yCjryxwc585zCU9KXgyIHaXy11ZntWtxSQYNmtHgaY2zZ3fpLqFHNz8tN-1oihzgRmlbXtr_fIRkI5P49kn-MutfNvFdu6QGl2DlZ9SYU8_P-f1W_vcsH7UDew2iloI8Ps9PAGwhl0gbdeTetiuotrO6AsMLfiusM9pAGGb4VoCSshXg17ycRjbLu-rDDdBlPQSsys84tyrM7_2OwnDV_o53Fbw94Kv_3DWEZbHKCWL9sR5lfrFyR2GVIPjvVbVHpJ7bdglLYEUXsVJWvv3lMo6-uD462y6Q1waURj5ZND9pXDUsgUtdTEyLd5hmhDXHiZlLYRqUzA5QyIODCBeNwdlK_VRDYr7bPAWRy2IIpjUQXNNJui6soagDngyYtacGEoaE1O962iatOuhI
 @Restaurants.API_HostAddress = https://localhost:7115
 
 
@@ -15,7 +15,7 @@ Authorization: Bearer {{token}}
 ###
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants/1/dishes
-
+Authorization: Bearer {{token}}
 ###
 
 DELETE {{Restaurants.API_HostAddress}}/api/restaurants/50/dishes
@@ -92,6 +92,6 @@ PATCH {{Restaurants.API_HostAddress}}/api/identity/user
 Authorization: Bearer {{token}}
 Content-Type: application/json
 {
-    "DateOfBirth": "2002-01-01",
-    "Nationality": "French"
+    "Nationality": "Egypt",
+    "DateOfBirth": "2002-01-01"
 }
