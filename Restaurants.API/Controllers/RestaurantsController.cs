@@ -18,8 +18,9 @@ namespace Restaurants.API.Controllers;
 public class RestaurantsController(IMediator mediator) : ControllerBase
 {
     [HttpGet]
-    [AllowAnonymous]
+    //[AllowAnonymous]
     [ProducesResponseType(StatusCodes.Status200OK)]
+    [Authorize(Policy = PolicyNames.CreatedOfAtLeast2Restaurants)]
     public async Task<ActionResult<IEnumerable<RestaurantDTO>>> GetAll()
     {
         var restaurants = await mediator.Send(new GetAllRestaurantsQuery());
