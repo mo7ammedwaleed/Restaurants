@@ -17,7 +17,8 @@ public class CreateRestaurantCommandHandler(ILogger<CreateRestaurantCommandHandl
         var currentUser = userContext.GetCurrentUser();
 
         logger.LogInformation("{UserName} {UserId} is Creating a new restaurant {@Restaurant}"
-            ,request,currentUser.Email
+            ,request
+            ,currentUser.Email
             , currentUser.Id);
 
         var restaurant = mapper.Map<Restaurant>(request);
