@@ -16,7 +16,9 @@ public class GetAllRestaurantsQueryHandler(ILogger<GetAllRestaurantsQueryHandler
         logger.LogInformation("Getting all restaurants");
         var (restaurants,totalCount) = (await restaurantsRepository.GetAllMatchAsync(request.SearchPhrase,
             request.PageSize,
-            request.PageNumber));
+            request.PageNumber,
+            request.SortBy,
+            request.SortDirection));
 
         var restaurantDTOs = mapper.Map<IEnumerable<RestaurantDTO>>(restaurants);
 
