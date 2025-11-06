@@ -1,6 +1,4 @@
-﻿using Azure.Core;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Restaurants.Domain.Entities;
 using Restaurants.Domain.Repositories;
 using Restaurants.Infrastrucutre.Persistence;
@@ -27,16 +25,22 @@ namespace Restaurants.Infrastrucutre.Repositories
             var restaurants = await dbContext.Restaurants.ToListAsync();
             return restaurants;
         }
-        public async Task<IEnumerable<Restaurant>> GetAllMatchAsync(string? searchPhrase)
+        public async Task<(IEnumerable<Restaurant>, int)> GetAllMatchAsync(string? searchPhrase, int pageSize, int pageNumber)
         {
             var searchPhraseLower = searchPhrase?.ToLower();
 
-            var restaurants = await dbContext.Restaurants
-                .Where(r => searchPhraseLower == null || (r.Name.ToLower().Contains(searchPhrase))
-                                              || r.Description.ToLower().Contains(searchPhrase))
+            var baseQuery = dbContext.Restaurants
+                .Where(r => searchPhraseLower == null ||
+                    (r.Name.ToLower().Contains(searchPhraseLower)) || r.Description.ToLower().Contains(searchPhraseLower));
+
+            var totalCount = await baseQuery.CountAsync();
+
+            var restaurants = await baseQuery
+                .Skip(pageSize * (pageNumber - 1))
+                .Take(pageSize)
                 .ToListAsync();
 
-            return restaurants;
+            return (restaurants,totalCount);
         }
 
         public async Task<Restaurant?> GetByIdAsync(int id)
