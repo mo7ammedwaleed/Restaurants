@@ -24,7 +24,7 @@ public class UserContext(IHttpContextAccessor httpContextAccessor) : IUserContex
         var dateOfBirth = dateOfBirthString == null ? (DateOnly?)null : DateOnly.Parse(dateOfBirthString);
 
 
-        return new CurrentUser(userId, email, roles, dateOfBirthString, dateOfBirth);
+        return new CurrentUser(userId, email, roles, nationality, dateOfBirth);
 
     }
 }
