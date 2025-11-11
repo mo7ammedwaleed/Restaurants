@@ -16,10 +16,10 @@ public class CreateRestaurantCommandHandler(ILogger<CreateRestaurantCommandHandl
     {
         var currentUser = userContext.GetCurrentUser();
 
-        logger.LogInformation("{UserName} {UserId} is Creating a new restaurant {@Restaurant}"
-            ,request
+        logger.LogInformation("{UserEmail} [{UserId}] is Creating a new restaurant {@Restaurant}"
             ,currentUser.Email
-            , currentUser.Id);
+            , currentUser.Id
+            ,request);
 
         var restaurant = mapper.Map<Restaurant>(request);
         restaurant.OwnerId = currentUser.Id;
